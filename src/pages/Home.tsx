@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import { width } from "@mui/system";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
@@ -28,7 +28,12 @@ export const Home = () => {
           variant="contained"
           sx={{ width: 100, height: 50, fontSize: "20px" }}
         >
-          Play!
+          <Link
+            to={`/tintiro/play`}
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Play!
+          </Link>
         </Button>
       </Box>
     </div>
