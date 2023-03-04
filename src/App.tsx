@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <div>チンチロアプリ（仮）</div>
-      <div>デプロイテスト</div>
+      <Home />
     </div>
   );
 }
