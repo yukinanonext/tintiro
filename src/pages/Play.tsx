@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { SaiContainer } from "../organisms/SaiContainer";
 
 export const Play = () => {
   return (
@@ -12,6 +13,7 @@ export const Play = () => {
       >
         Play画面
       </Typography>
+      <SaiContainer />
     </div>
   );
 };
