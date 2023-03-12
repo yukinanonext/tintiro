@@ -49,11 +49,14 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
           />
         </Box>
       </Box>
-      <Button variant="contained" color="error" onClick={stopImg}>
+      <Button
+        variant="contained"
+        color="error"
+        onClick={stopImg}
+        disabled={isRun ? false : true}
+      >
         STOP!
       </Button>
-
-      <Typography>{saiNumber}</Typography>
     </div>
   );
 };
