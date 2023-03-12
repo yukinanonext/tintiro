@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import one from "../img/one.png";
 import two from "../img/two.png";
@@ -8,9 +8,13 @@ import five from "../img/five.png";
 import six from "../img/six.png";
 import { useInterval } from "../hooks/useInterval";
 
-export const Sai = () => {
+export interface SaiProps {
+  isRun: boolean;
+  stopImg: () => void;
+}
+
+export const Sai = ({ isRun, stopImg }: SaiProps) => {
   const [saiNumber, setSaiNumber] = useState<number>(0);
-  const [isRun, setIsRun] = useState<boolean>(false);
 
   const saiImg = [one, two, three, four, five, six];
 
@@ -18,14 +22,6 @@ export const Sai = () => {
     const randomNumber = Math.floor(Math.random() * 6);
     setSaiNumber(randomNumber);
   }, isRun);
-
-  const changeImg = () => {
-    setIsRun(true);
-  };
-
-  const stopImg = () => {
-    setIsRun(false);
-  };
 
   console.log("render:", saiNumber);
 
@@ -53,9 +49,11 @@ export const Sai = () => {
           />
         </Box>
       </Box>
+      <Button variant="contained" color="error" onClick={stopImg}>
+        STOP!
+      </Button>
 
-      <Button onClick={changeImg}>start</Button>
-      <Button onClick={stopImg}>stop</Button>
+      <Typography>{saiNumber}</Typography>
     </div>
   );
 };
