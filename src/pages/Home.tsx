@@ -3,9 +3,17 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        marginTop: -50,
+      }}
+    >
       <Typography
-        variant="h2"
+        variant="h3"
         sx={{
           p: 2,
           fontWeight: "bold",

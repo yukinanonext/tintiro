@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useState } from "react";
 import one from "../img/one.png";
 import two from "../img/two.png";
@@ -29,7 +29,7 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
     <div>
       <Box
         sx={{
-          p: 2,
+          p: 1,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -37,9 +37,8 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
       >
         <Box
           sx={{
-            width: "100px",
+            width: { xs: "70px", sm: "100px" },
             border: "solid",
-            borderRadius: "5px",
           }}
         >
           <img
@@ -54,6 +53,11 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
         color="error"
         onClick={stopImg}
         disabled={isRun ? false : true}
+        sx={{
+          width: { xs: "20px", sm: "100px" },
+          height: { xs: "30px", sm: "40px" },
+          fontSize: { xs: "10px", sm: "15px" },
+        }}
       >
         STOP!
       </Button>

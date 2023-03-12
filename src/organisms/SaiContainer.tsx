@@ -29,7 +29,11 @@ export const SaiContainer = () => {
   return (
     <div>
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
         <Sai isRun={isRun[0]} stopImg={stopImg1} />
         <Sai isRun={isRun[1]} stopImg={stopImg2} />
@@ -37,7 +41,12 @@ export const SaiContainer = () => {
       </Box>
       <Button
         variant="contained"
-        sx={{ width: 200, height: 50, fontSize: "20px", marginTop: 3 }}
+        sx={{
+          width: { xs: 150, sm: 200 },
+          height: { xs: 40, sm: 50 },
+          fontSize: { xs: "18px", sm: "20px" },
+          marginTop: 3,
+        }}
         onClick={changeImg}
         disabled={restSpinSaiNumber > 0 ? true : false}
       >

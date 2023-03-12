@@ -3,12 +3,20 @@ import { SaiContainer } from "../organisms/SaiContainer";
 
 export const Play = () => {
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        marginTop: -50,
+      }}
+    >
       <Typography
-        variant="h2"
         sx={{
           p: 2,
           fontWeight: "bold",
+          fontSize: { xs: "30px", sm: "50px" },
         }}
       >
         Play画面
