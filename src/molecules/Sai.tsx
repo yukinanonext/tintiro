@@ -10,7 +10,7 @@ import { useInterval } from "../hooks/useInterval";
 
 export interface SaiProps {
   isRun: boolean;
-  stopImg: () => void;
+  stopImg: (n: number) => void;
 }
 
 export const Sai = ({ isRun, stopImg }: SaiProps) => {
@@ -23,7 +23,7 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
     setSaiNumber(randomNumber);
   }, isRun);
 
-  console.log("render:", saiNumber);
+  //console.log("render:", saiNumber);
 
   return (
     <div>
@@ -51,7 +51,7 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
       <Button
         variant="contained"
         color="error"
-        onClick={stopImg}
+        onClick={() => stopImg(saiNumber)}
         disabled={isRun ? false : true}
         sx={{
           width: { xs: "20px", sm: "100px" },

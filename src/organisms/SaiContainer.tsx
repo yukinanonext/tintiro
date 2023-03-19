@@ -1,29 +1,35 @@
 import { Box, Button } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useResultText } from "../hooks/useResultText";
 import { Sai } from "../molecules/Sai";
 
 export const SaiContainer = () => {
   const [isRun, setIsRun] = useState<boolean[]>([false, false, false]);
   const [restSpinSaiNumber, setRestSpinSaiNumber] = useState<number>(0);
+  const [allSaiNumbers, setAllSaiNumbers] = useState<number[]>([]);
 
-  const stopImg1 = () => {
+  const stopImg1 = (n: number) => {
     setIsRun(isRun.map((value, index) => (index === 0 ? false : value)));
+    setAllSaiNumbers([...allSaiNumbers, n]);
     setRestSpinSaiNumber(restSpinSaiNumber - 1);
   };
 
-  const stopImg2 = () => {
+  const stopImg2 = (n: number) => {
     setIsRun(isRun.map((value, index) => (index === 1 ? false : value)));
+    setAllSaiNumbers([...allSaiNumbers, n]);
     setRestSpinSaiNumber(restSpinSaiNumber - 1);
   };
 
-  const stopImg3 = () => {
+  const stopImg3 = (n: number) => {
     setIsRun(isRun.map((value, index) => (index === 2 ? false : value)));
+    setAllSaiNumbers([...allSaiNumbers, n]);
     setRestSpinSaiNumber(restSpinSaiNumber - 1);
   };
 
   const changeImg = () => {
     setIsRun([true, true, true]);
     setRestSpinSaiNumber(3);
+    setAllSaiNumbers([]);
   };
 
   return (
@@ -52,6 +58,15 @@ export const SaiContainer = () => {
       >
         START!
       </Button>
+      <Box
+        sx={
+          allSaiNumbers.length === 3
+            ? { p: 3, m: 2, border: "double 5px #4ec4d3" }
+            : {}
+        }
+      >
+        {useResultText(allSaiNumbers)}
+      </Box>
       <br />
     </div>
   );
