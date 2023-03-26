@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tintiro/static/css/main.073c9b0a.css",
-    "main.js": "/tintiro/static/js/main.25bf15ec.js",
+    "main.js": "/tintiro/static/js/main.91b74657.js",
     "static/js/787.d276ff76.chunk.js": "/tintiro/static/js/787.d276ff76.chunk.js",
     "index.html": "/tintiro/index.html",
     "main.073c9b0a.css.map": "/tintiro/static/css/main.073c9b0a.css.map",
-    "main.25bf15ec.js.map": "/tintiro/static/js/main.25bf15ec.js.map",
+    "main.91b74657.js.map": "/tintiro/static/js/main.91b74657.js.map",
     "787.d276ff76.chunk.js.map": "/tintiro/static/js/787.d276ff76.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.25bf15ec.js"
+    "static/js/main.91b74657.js"
   ]
 }
