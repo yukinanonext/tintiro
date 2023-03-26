@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { RuleModal } from "../organisms/RuleModal";
 
 export const Home = () => {
   return (
@@ -44,6 +45,7 @@ export const Home = () => {
           </Link>
         </Button>
       </Box>
+      <RuleModal />
     </div>
   );
 };

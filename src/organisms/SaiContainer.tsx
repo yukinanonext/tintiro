@@ -61,7 +61,7 @@ export const SaiContainer = () => {
       <Box
         sx={
           allSaiNumbers.length === 3
-            ? { p: 3, m: 2, border: "double 5px #4ec4d3" }
+            ? { p: 3, m: 2, mb: 0, border: "double 5px #4ec4d3" }
             : {}
         }
       >

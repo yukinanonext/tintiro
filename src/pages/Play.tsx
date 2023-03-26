@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { RuleModal } from "../organisms/RuleModal";
 import { SaiContainer } from "../organisms/SaiContainer";
 
 export const Play = () => {
@@ -22,6 +23,7 @@ export const Play = () => {
         Play画面
       </Typography>
       <SaiContainer />
+      <RuleModal />
     </div>
   );
 };
