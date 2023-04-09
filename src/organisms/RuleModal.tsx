@@ -48,6 +48,7 @@ const styles = {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+    pb: 0,
     maxHeight: "80vh",
     overflow: "scroll",
   },
@@ -143,7 +144,11 @@ export const RuleModal = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  mt: 2,
+                  mt: 1,
+                  p: 2,
+                  position: "sticky",
+                  bottom: 0,
+                  background: "white",
                 }}
               >
                 <Button
