@@ -32,6 +32,8 @@ export const SaiContainer = () => {
     setAllSaiNumbers([]);
   };
 
+  console.log(allSaiNumbers);
+
   return (
     <div>
       <Box
@@ -41,9 +43,21 @@ export const SaiContainer = () => {
           alignItems: "center",
         }}
       >
-        <Sai isRun={isRun[0]} stopImg={stopImg1} />
-        <Sai isRun={isRun[1]} stopImg={stopImg2} />
-        <Sai isRun={isRun[2]} stopImg={stopImg3} />
+        <Sai
+          isRun={isRun[0]}
+          stopImg={stopImg1}
+          stopSaiNumber={allSaiNumbers[0]}
+        />
+        <Sai
+          isRun={isRun[1]}
+          stopImg={stopImg2}
+          stopSaiNumber={allSaiNumbers[1]}
+        />
+        <Sai
+          isRun={isRun[2]}
+          stopImg={stopImg3}
+          stopSaiNumber={allSaiNumbers[2]}
+        />
       </Box>
       <Button
         variant="contained"

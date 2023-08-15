@@ -11,9 +11,10 @@ import { useInterval } from "../hooks/useInterval";
 export interface SaiProps {
   isRun: boolean;
   stopImg: (n: number) => void;
+  stopSaiNumber: number;
 }
 
-export const Sai = ({ isRun, stopImg }: SaiProps) => {
+export const Sai = ({ isRun, stopImg, stopSaiNumber }: SaiProps) => {
   const [saiNumber, setSaiNumber] = useState<number>(0);
 
   const saiImg = [one, two, three, four, five, six];
@@ -43,7 +44,13 @@ export const Sai = ({ isRun, stopImg }: SaiProps) => {
         >
           <img
             style={{ width: "100%" }}
-            src={saiImg[saiNumber]}
+            src={
+              isRun
+                ? saiImg[saiNumber]
+                : stopSaiNumber
+                ? saiImg[stopSaiNumber]
+                : saiImg[0]
+            }
             alt="サイコロ"
           />
         </Box>
