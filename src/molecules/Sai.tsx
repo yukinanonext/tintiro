@@ -24,8 +24,6 @@ export const Sai = ({ isRun, stopImg, stopSaiNumber }: SaiProps) => {
     setSaiNumber(randomNumber);
   }, isRun);
 
-  //console.log("render:", saiNumber);
-
   return (
     <div>
       <Box

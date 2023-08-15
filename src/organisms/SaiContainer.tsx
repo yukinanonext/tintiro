@@ -32,8 +32,6 @@ export const SaiContainer = () => {
     setAllSaiNumbers([]);
   };
 
-  console.log(allSaiNumbers);
-
   return (
     <div>
       <Box
