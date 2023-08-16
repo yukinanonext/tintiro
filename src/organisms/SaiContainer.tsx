@@ -1,12 +1,14 @@
-import { Box, Button } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useResultText } from "../hooks/useResultText";
 import { Sai } from "../molecules/Sai";
+import { ResultsModal } from "./ResultsModal";
 
 export const SaiContainer = () => {
   const [isRun, setIsRun] = useState<boolean[]>([false, false, false]);
   const [restSpinSaiNumber, setRestSpinSaiNumber] = useState<number>(0);
   const [allSaiNumbers, setAllSaiNumbers] = useState<number[]>([0, 0, 0]);
+  const [results, setResults] = useState<number[][]>([]);
 
   const stopImg1 = (n: number) => {
     setIsRun(isRun.map((value, index) => (index === 0 ? false : value)));
@@ -31,8 +33,30 @@ export const SaiContainer = () => {
     setRestSpinSaiNumber(3);
   };
 
+  useEffect(() => {
+    if (restSpinSaiNumber === 0) {
+      setResults([...results, allSaiNumbers]);
+    }
+  }, [allSaiNumbers, restSpinSaiNumber]);
+
   return (
     <div>
+      <Typography
+        sx={{
+          mb: 1,
+          fontWeight: "bold",
+          fontSize: { xs: "15px", sm: "20px" },
+        }}
+      >
+        {results.length > 1
+          ? restSpinSaiNumber > 0
+            ? `${results.length}回目`
+            : `${results.length - 1}回目`
+          : restSpinSaiNumber > 0
+          ? `1回目`
+          : ``}
+      </Typography>
+      <ResultsModal results={results} />
       <Box
         sx={{
           display: "flex",
@@ -71,16 +95,12 @@ export const SaiContainer = () => {
       </Button>
       <Box
         sx={
-          allSaiNumbers.length === 3 && restSpinSaiNumber === 0
+          restSpinSaiNumber === 0
             ? { p: 3, m: 2, mb: 0, border: "double 5px #4ec4d3" }
             : {}
         }
       >
-        {useResultText(
-          allSaiNumbers.length === 3 && restSpinSaiNumber === 0
-            ? allSaiNumbers
-            : []
-        )}
+        {useResultText(restSpinSaiNumber === 0 ? allSaiNumbers : [])}
       </Box>
       <br />
     </div>
